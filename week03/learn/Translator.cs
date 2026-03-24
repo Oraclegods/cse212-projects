@@ -25,6 +25,9 @@ public class Translator
     public void AddWord(string fromWord, string toWord)
     {
         // ADD YOUR CODE HERE
+    {
+        _words[fromWord] = toWord;
+    }
     }
 
     /// <summary>
@@ -35,6 +38,13 @@ public class Translator
     public string Translate(string fromWord)
     {
         // ADD YOUR CODE HERE
-        return "";
+        // 1. First, check if the word (the Key) even exists in our dictionary
+        if (_words.ContainsKey(fromWord))
+        {
+            // 2. If it does, return the translation (the Value)
+            return _words[fromWord];
+        }
+
+        return "???";
     }
 }
